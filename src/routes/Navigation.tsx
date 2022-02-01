@@ -32,7 +32,9 @@ export const Navigation = () => {
 
           <Switch>
             {Routes.map(({ path, Component }) => {
-              return <Route key={path} path={path} component={Component} />;
+              return (
+                <Route key={path} path={path} render={() => <Component />} />
+              );
             })}
             <Redirect to={Routes[0].to} />
           </Switch>
